@@ -17,6 +17,18 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+       steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Show changed files
+        run: |
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }}
+      
+      - name: Deploy to server
+        run: |
+          echo "Deploying changes..."
+      
       - name: Checkout repository
         uses: actions/checkout@v2
 
