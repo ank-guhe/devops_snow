@@ -17,8 +17,6 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-       steps:
-
       - name: Checkout repository
         uses: actions/checkout@v2
 
